@@ -56,6 +56,9 @@ function stratagemSelection() {
     function handleKeyDown(event) {
         if (event.key === 'Enter') return; // Ignore Enter key
 
+        let keyPressed = mapKey(event.key);
+        if (keyPressed === null) return; // Ignore inputs other than WASD, arrow keys
+
         if (!timerStarted) {
             startTime = performance.now(); // Reset startTime at the first key press
             timerInterval = setInterval(function() { // Start the timer only once
@@ -64,8 +67,6 @@ function stratagemSelection() {
             }, 10);
             timerStarted = true; // Prevent the timer from starting again
         }
-
-        let keyPressed = mapKey(event.key);
 
         if (currentInput.length < correctInput.length) {
             currentInput.push(keyPressed);
@@ -98,33 +99,22 @@ function stratagemSelection() {
         let isWASD = document.getElementById('controlToggle').checked;
         if (isWASD) {
             switch (keyPressed) {
-                case 'w':
-                    return 'Up';
-                case 'a':
-                    return 'Left';
-                case 's':
-                    return 'Down';
-                case 'd':
-                    return 'Right';
-                default:
-                    return ''; // Ignore other keys
+                case 'w': return 'Up';
+                case 'a': return 'Left';
+                case 's': return 'Down';
+                case 'd': return 'Right';
+                default: return null; // Change to ignore other keys
             }
         } else {
             switch (keyPressed) {
-                case 'ArrowUp':
-                    return 'Up';
-                case 'ArrowDown':
-                    return 'Down';
-                case 'ArrowLeft':
-                    return 'Left';
-                case 'ArrowRight':
-                    return 'Right';
-                default:
-                    return ''; // Ignore other keys
+                case 'ArrowUp': return 'Up';
+                case 'ArrowDown': return 'Down';
+                case 'ArrowLeft': return 'Left';
+                case 'ArrowRight': return 'Right';
+                default: return null; // Change to ignore other keys
             }
         }
     }
-
 
     function displayStratagemInfo(stratagem) {
         document.getElementById('stratagem-name').textContent = stratagem.name;
