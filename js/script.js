@@ -17,10 +17,8 @@ let canStartNewGame = true; // Boolean flag to control game start
 
 // Add an event listener for the control toggle checkbox
 document.getElementById('controlToggle').addEventListener('change', function() {
-    if (canStartNewGame) {
-        // Re-initialize the game to apply the new control scheme, if needed
-        stratagemSelection();
-    }
+    // Re-initialize the game to apply the new control scheme, if needed
+    stratagemSelection();
 });
 
 document.addEventListener('keydown', function(event) {
