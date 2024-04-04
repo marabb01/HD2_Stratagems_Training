@@ -92,3 +92,28 @@ input[type="checkbox"]:focus + label {
     padding: 10px; /* Adjust padding for smaller screens */
   }
 }
+
+/* Footer styling */
+footer {
+  background-color: #333; /* Match this to your site’s header or main color */
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  font-size: 0.8em;
+}
+
+footer a {
+  color: #4CAF50; /* This could be your accent color */
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+footer span {
+  margin-right: 5px;
+}

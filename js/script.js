@@ -1,3 +1,18 @@
+document.addEventListener('DOMContentLoaded', function() {
+    // Display the version banner
+    const versionBanner = document.getElementById('version-banner');
+    if (versionBanner) {
+        versionBanner.innerHTML = `Version: ${APP_VERSION}`;
+    }
+
+    // Update feedback link
+    const feedbackLink = document.getElementById('feedback-link');
+    if (feedbackLink) {
+        feedbackLink.innerHTML = `<a href="https://github.com/marabb01/HD2_Stratagems_Training/issues" target="_blank">Feedback</a>`;
+    }
+});
+
+
 let canStartNewGame = true; // Boolean flag to control game start
 
 // Add an event listener for the control toggle checkbox
