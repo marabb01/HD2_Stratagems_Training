@@ -5,28 +5,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Stratagem Input Practice</title>
   <link rel="stylesheet" href="css/style.css">
-  <link rel="icon" href="img/helldivers.ico" type="image/x-icon">
+  <link rel="icon" href="img/helldivers.ico">
 </head>
 <body>
-<div id="app">
-  <header>
-    <img id="helldivers-logo" src="img/helldivers.ico" alt="Helldivers Logo" height="75">
-  </header>
-  <main>
-    <section id="stratagem-info" aria-label="Stratagem Information">
-      <div id="stratagem-name" aria-live="polite"></div>
-    </section>
-    <h1 id="stratagem-display">Stratagem Input Practice</h1>
-    <img id="trauma-guy" src="img/trauma-guy-opt.jpg" alt="Trauma Guy" loading="lazy">
-    <div id="feedback">Press ENTER to start!</div>
-    <div id="timer" aria-live="polite"></div>
-    <div class="controls">
-      <label for="controlToggle">WASD Toggle:</label>
-      <input type="checkbox" id="controlToggle" name="controlToggle">
-    </div>
-  </main>
+<div id="app"> <!-- Wrap content for centering and better structure -->
+  <section id="stratagem-info"> <!-- Semantic element for related content -->
+    <img id="stratagem-icon" src="" alt="Stratagem Icon" style="display: none;"/>
+    <div id="stratagem-name"></div>
+  </section>
+  <figure>
+    <img id="helldivers-logo" src="img/helldivers.ico" alt="Helldivers Logo" height="75"/> <!-- Self-closing tag and alt attribute -->
+  </figure>
+  <div id="stratagem-display">Stratagem Input Practice</div>
+  <img id="trauma-guy" src="https://i.kinja-img.com/gawker-media/image/upload/c_fit,q_60,w_645/435f9c2fa17254a1da3fcf3182d84522.jpg" alt="Trauma Guy"/> <!-- Self-closing tag and alt attribute -->
+  <div id="feedback">Press ENTER to start!</div>
+  <div id="timer"></div>
+  <div>
+    <label for="controlToggle">Use WASD keys</label>
+    <input type="checkbox" id="controlToggle" name="controlToggle"/> <!-- Self-closing tag -->
+  </div>
 </div>
-
-<script src="js/script.js" defer></script>
+<script src="js/script.js"></script>
 </body>
 </html>
