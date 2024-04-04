@@ -1,65 +1,94 @@
+/* Define root variables for easy theme management */
+:root {
+  --accent-color: #4CAF50; /* Green as the primary accent color */
+  --background-color: #333;
+  --container-background-color: #444;
+  --button-hover-color: #666;
+  --text-color: #fff;
+  --font-family-base: 'Open Sans', Arial, sans-serif;
+  --font-family-heading: 'Roboto Slab', serif;
+}
+
+/* Base styles for body and html */
 body, html {
   margin: 0;
   padding: 0;
-  font-family: Arial, sans-serif;
+  font-family: var(--font-family-base);
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #333; /* Darker background */
-  color: #fff; /* Lighter text for better contrast */
+  background-color: var(--background-color);
+  color: var(--text-color);
 }
 
+/* Main app container styles */
 #app {
   text-align: center;
   padding: 20px;
   border-radius: 8px;
-  background-color: #444; /* Slightly lighter than body for contrast */
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Soft shadow for depth */
-  transition: transform 0.2s ease; /* Smooth scaling on interaction */
+  background-color: var(--container-background-color);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
 }
 
 #app:hover {
-  transform: scale(1.02); /* Slightly enlarge on hover for reactivity */
+  transform: scale(1.03); /* Enhance hover effect for responsiveness */
 }
 
+/* Styling for various elements within the app */
 #stratagem-display, #feedback, #stratagem-info, button {
   margin: 20px 0;
-  font-size: 24px;
-  transition: all 0.2s ease; /* Smooth transitions for text and buttons */
+  font-size: 24px; /* Keeping font size consistent, consider responsive units like em */
+  transition: all 0.3s ease; /* Smooth transitions */
 }
 
+/* Specific icon adjustments */
 #stratagem-icon {
   display: block;
-  margin: 0 auto 30px; /* Adjust bottom margin to give more space */
-  max-width: 100%; /* Retain responsiveness */
-  transform: scale(1.8);
-  transform-origin: center;
+  margin: 0 auto 30px;
+  max-width: 100%;
+  transform: scale(1.8); /* Enhance icon size for visibility */
+  transform-origin: center; /* Ensure scaling is centered */
 }
 
+/* Button styles with accent color */
 button {
   padding: 10px 20px;
-  font-size: 18px;
+  font-size: 18px; /* Adjust font size for readability */
   cursor: pointer;
-  background-color: #555; /* Darker buttons */
-  color: #fff; /* Ensure text is readable */
+  background-color: var(--accent-color); /* Use accent color for buttons */
+  color: var(--text-color);
   border: none;
   border-radius: 4px;
+  transition: background-color 0.3s ease; /* Smooth background color transition on hover */
 }
 
 button:hover {
-  background-color: #666; /* Lighten on hover */
+  background-color: var(--button-hover-color); /* Lighten button on hover for interaction feedback */
 }
 
+/* Additional feedback and form element styles for better accessibility */
 #feedback {
-  font-size: 20px;
+  font-size: 20px; /* Adjust font size for clarity */
 }
 
 input[type="checkbox"], label {
   cursor: pointer;
-  user-select: none; /* Prevent text selection */
+  user-select: none; /* Improve user interaction with checkboxes */
 }
 
 input[type="checkbox"]:focus + label {
-  outline: 1px dashed #aaa; /* Focus indicator for accessibility */
+  outline: 1px dashed #aaa; /* Enhance focus indicator for accessibility */
+}
+
+/* Responsive adjustments for better mobile viewing */
+@media (max-width: 768px) {
+  #stratagem-display, #feedback, #stratagem-info, button {
+    font-size: 20px; /* Adjust font sizes for smaller screens */
+  }
+
+  #app {
+    padding: 10px; /* Adjust padding for smaller screens */
+  }
 }
